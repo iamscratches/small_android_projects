@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".sqlLiteDatabases">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:ems="10"
+            android:hint="Enter Username"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/tPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:ems="10"
+            android:hint="Enter Password"
+            android:inputType="textPersonName|textPassword" />
+
+        <Button
+            android:id="@+id/bsave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="buSave"
+            android:text="save"/>
+
+        <Button
+            android:id="@+id/bload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="buLoad"
+            android:text="load"/>
+
+        <ListView
+            android:id="@+id/lvList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#dfd3d3"
+            android:padding="5dp"
+            android:dividerHeight="9dp"
+            android:fadeScrollbars="true"
+            android:isScrollContainer="true" />
+    </LinearLayout>
+
+
+</RelativeLayout>

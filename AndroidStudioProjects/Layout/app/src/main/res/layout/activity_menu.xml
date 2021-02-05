@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bu_color"
+    tools:context=".MenuActivity">
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="151dp"
+        android:layout_height="95dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="215dp"
+        android:background="@drawable/bu_color"
+        android:onClick="buClick"
+        android:text="@string/bu_home"
+        app:backgroundTint="@color/teal_200"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <Button
+        style="@style/buttonset"
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:text="Button" />
+
+</RelativeLayout>

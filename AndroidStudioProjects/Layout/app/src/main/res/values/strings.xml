@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Localization</string>
+    <string name="bu_home">Home</string>
+    <string name="msg">This is a string resource</string>
+</resources>
