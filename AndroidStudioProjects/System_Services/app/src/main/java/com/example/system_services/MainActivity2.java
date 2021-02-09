@@ -2,6 +2,8 @@ package com.example.system_services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -15,11 +17,27 @@ public class MainActivity2 extends AppCompatActivity {
 
     LocalService mService;
     boolean mBound = false;
+    int jobID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        // Job info
+        JobInfo.Builder builder = new JobInfo.Builder(jobID, new ComponentName(this, MyJobService.class));
+        builder.setMinimumLatency(1000)
+            .setOverrideDeadline(2000)
+            .setPeriodic(2000)
+            .setPersisted(true)
+            .setRequiresDeviceIdle(true)
+            .setRequiresCharging(true)
+            .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED);
+
+
+        // send job to system
+        JobScheduler jobScheduler = (JobScheduler)getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        jobScheduler.schedule(builder.build());
     }
 
     @Override
