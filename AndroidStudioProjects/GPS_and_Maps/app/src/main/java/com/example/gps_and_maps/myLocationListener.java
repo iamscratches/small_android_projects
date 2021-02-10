@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 public class myLocationListener implements LocationListener {
-
+    public static Location location;
     Context context;
     public  myLocationListener(Context context){
         this.context = context;
@@ -19,6 +19,7 @@ public class myLocationListener implements LocationListener {
     public void onLocationChanged(@NonNull Location location) {
         String Location = "long : " + String.valueOf(location.getLongitude()) + ", lat : " + String.valueOf(location.getLatitude());
         Toast.makeText(context, Location, Toast.LENGTH_LONG).show();
+        this.location = location;
     }
 
     @Override

@@ -1,30 +1,27 @@
 package com.example.gps_and_maps;
 
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.pm.PackageManager;
-import android.location.LocationManager;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
+import com.google.android.gms.maps.StreetViewPanorama;
+import com.google.android.gms.maps.StreetViewPanoramaFragment;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    //get access to location permission
-    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
-    LocationManager lm;
-    myLocationListener locationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,52 +46,78 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        myThread th = new myThread();
+        th.start();
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,14));
+//        LatLng sydney = new LatLng(-34, 151);
+//        LatLng sydney2 = new LatLng(-34.01, 151.02);
+//        LatLng sydney3 = new LatLng(-34.07, 151.03);
+//
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+//        mMap.addCircle(new CircleOptions().center(sydney).radius(200).strokeColor(Color.BLUE).fillColor(Color.CYAN));
+//        mMap.addPolyline(new PolylineOptions().add(sydney,sydney2, sydney3).width(5).color(Color.BLUE).geodesic(true));
+//        mMap.addPolygon(new PolygonOptions().add(sydney, sydney2, sydney3));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,14));
+
+//        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+//            @Override
+//            public void onMapClick(LatLng latLng) {
+//                mMap.addMarker(new MarkerOptions().position(latLng).title("Add by click"));
+//            }
+//        });
     }
-    void CheckUserPermissions() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
-                    PackageManager.PERMISSION_GRANTED ||
-                    ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) !=
-                            PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(
-                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},
-                        REQUEST_CODE_ASK_PERMISSIONS);
-                return;
+    class myThread extends Thread{
+        @Override
+        public void run() {
+            while(true){
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mMap.clear();
+                        if(myLocationListener.location != null) {
+                            LatLng mark = new LatLng(myLocationListener.location.getLatitude(), myLocationListener.location.getLongitude());
+                            mMap.addMarker(new MarkerOptions().position(mark).title("I'm here"));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mark, 16));
+
+                        }
+                    }
+                });
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
-
-        getLocation();// init the contact list
-
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    getLocation();// init the contact list
-                } else {
-                    // Permission Denied
-                    Toast.makeText(this, "you denied location access", Toast.LENGTH_SHORT)
-                            .show();
-                }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    void getLocation() {
-        locationListener = new myLocationListener(this);
-        lm =(LocationManager)this.getSystemService(LOCATION_SERVICE);
-
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,1000,10, locationListener);
-
-    }
 }
+//public class MapsActivity extends FragmentActivity implements OnStreetViewPanoramaReadyCallback {
+//
+//    private GoogleMap mMap;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_maps);
+//        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+//        StreetViewPanoramaFragment mapFragment = (StreetViewPanoramaFragment) getFragmentManager()
+//                .findFragmentById(R.id.map);
+//        mapFragment.getStreetViewPanoramaAsync(this);
+//    }
+//
+//    @Override
+//    public void onStreetViewPanoramaReady(StreetViewPanorama streetViewPanorama) {
+//        streetViewPanorama.setPosition(new LatLng(40.706082, -74.008968));
+//        streetViewPanorama.setStreetNamesEnabled(true);
+//        streetViewPanorama.setUserNavigationEnabled(true);
+//        streetViewPanorama.setZoomGesturesEnabled(true);
+//        streetViewPanorama.setPanningGesturesEnabled(true);
+//    }
+//
+//    @Override
+//    public void onPointerCaptureChanged(boolean hasCapture) {
+//
+//    }
+//}
