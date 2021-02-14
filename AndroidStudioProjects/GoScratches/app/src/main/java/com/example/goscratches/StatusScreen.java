@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Build;
@@ -92,7 +93,7 @@ public class StatusScreen extends AppCompatActivity {
     void getLocation() {
         locationListener = new myLocationListener(this);
         lm =(LocationManager)this.getSystemService(LOCATION_SERVICE);
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,1000,10, locationListener);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,10000,15, locationListener);
 
     }
 
@@ -110,5 +111,10 @@ public class StatusScreen extends AppCompatActivity {
             buSetEdit.setText("edit");
             Toast.makeText(this, "Data saved successfully", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void nextLayout(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 }

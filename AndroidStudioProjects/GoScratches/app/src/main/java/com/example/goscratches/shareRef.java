@@ -6,7 +6,9 @@ import android.content.SharedPreferences;
 
 public class shareRef {
     SharedPreferences SharedRef;
+    Context context;
     public shareRef(Context context){
+        this.context = context;
         SharedRef = context.getSharedPreferences("myRef", Context.MODE_PRIVATE);
         if(SharedRef.contains("Name")==false){
             SharedPreferences.Editor editor = SharedRef.edit();
