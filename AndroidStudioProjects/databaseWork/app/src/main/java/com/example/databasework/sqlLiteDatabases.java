@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class sqlLiteDatabases extends AppCompatActivity {
 
-    DBManager db;
+        DBManager db;
     EditText tUsername, tPassword;
     ArrayList<AdapterItems> listnewsData = new ArrayList<AdapterItems>();
     MyCustomAdapter myadapter;
