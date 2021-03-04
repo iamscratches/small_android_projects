@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirebaseProjectApp</string>
+    <string name="default_notification_channel_id">24</string>
+    <string name="msg_token_fmt">Hello world</string>
+</resources>

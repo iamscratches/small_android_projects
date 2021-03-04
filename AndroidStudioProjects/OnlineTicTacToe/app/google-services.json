@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1011764722637",
+    "project_id": "onlinetictactoe-8eb56",
+    "storage_bucket": "onlinetictactoe-8eb56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011764722637:android:6704068406d95d1f3f2284",
+        "android_client_info": {
+          "package_name": "com.iamscratches.onlinetictactoe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011764722637-4pkefis3hotnrbfgrs4cuocfikpcugeg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iamscratches.onlinetictactoe",
+            "certificate_hash": "f028ebd609b9208996a8a918b86498ae530f5b27"
+          }
+        },
+        {
+          "client_id": "1011764722637-60nkau3vfc705nf7dtn94fgsjfm87scn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoK_8CgiWRXgZiKXd-oXfEJmH_1zm5HcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011764722637-60nkau3vfc705nf7dtn94fgsjfm87scn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
