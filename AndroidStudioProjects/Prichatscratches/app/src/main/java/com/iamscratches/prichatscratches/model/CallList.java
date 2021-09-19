@@ -1,25 +1,25 @@
 package com.iamscratches.prichatscratches.model;
 
-public class ChatList {
-    private String usedID, username, description, date, urlProfile;
+public class CallList {
+    private String userID, username, date, urlProfile, callType;
 
-    public ChatList() {
+    public CallList() {
     }
 
-    public ChatList(String usedID, String username, String description, String date, String urlProfile) {
-        this.usedID = usedID;
+    public CallList(String userID, String username, String date, String urlProfile, String callType) {
+        this.userID = userID;
         this.username = username;
-        this.description = description;
         this.date = date;
         this.urlProfile = urlProfile;
+        this.callType = callType;
     }
 
-    public String getUsedID() {
-        return usedID;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setUsedID(String usedID) {
-        this.usedID = usedID;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getUsername() {
@@ -28,14 +28,6 @@ public class ChatList {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getDate() {
@@ -52,5 +44,13 @@ public class ChatList {
 
     public void setUrlProfile(String urlProfile) {
         this.urlProfile = urlProfile;
+    }
+
+    public String getCallType() {
+        return callType;
+    }
+
+    public void setCallType(String callType) {
+        this.callType = callType;
     }
 }

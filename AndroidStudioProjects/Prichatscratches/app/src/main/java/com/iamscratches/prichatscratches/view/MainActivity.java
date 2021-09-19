@@ -1,9 +1,8 @@
-package com.iamscratches.prichatscratches;
+package com.iamscratches.prichatscratches.view;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingComponent;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -16,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.iamscratches.prichatscratches.R;
 import com.iamscratches.prichatscratches.databinding.ActivityMainBinding;
 import com.iamscratches.prichatscratches.menu.CallsFragment;
 import com.iamscratches.prichatscratches.menu.ChatFragment;

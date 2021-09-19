@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "355312592996",
+    "project_id": "prichat-a0026",
+    "storage_bucket": "prichat-a0026.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355312592996:android:d3b789052d8d9574c21771",
+        "android_client_info": {
+          "package_name": "com.iamscratches.prichatscratches"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355312592996-nkjkpfldjvsdulpidl01cpr1il3occsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoiQtx43-h34Bqin4HtA13mbzm_DFg4dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355312592996-nkjkpfldjvsdulpidl01cpr1il3occsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

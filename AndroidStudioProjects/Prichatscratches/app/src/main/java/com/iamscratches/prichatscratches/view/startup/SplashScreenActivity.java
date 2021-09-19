@@ -1,4 +1,4 @@
-package com.iamscratches.prichatscratches;
+package com.iamscratches.prichatscratches.view.startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.iamscratches.prichatscratches.R;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private int SPLASH_SCREEN =2000;
+    private int SPLASH_SCREEN =3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +22,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashScreenActivity.this,MainActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class));
                 finish();
             }
         },SPLASH_SCREEN);

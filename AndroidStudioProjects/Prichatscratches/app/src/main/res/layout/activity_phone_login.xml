@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".view.auth.PhoneLoginActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/merienda_one"
+            android:textColor="@color/app_color"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="Enter ur phone no."/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:tint="@color/app_color"
+            android:src="@drawable/ic_baseline_more_vert_24"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/merienda_one"
+            android:text="We will be sending u an SMS OTP to verify ur no. \nWhat's my no."/>
+
+        <Spinner
+            android:id="@+id/spinner_country"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda_one"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merienda_one"
+                android:textSize="16sp"
+                android:text="+"/>
+            
+            <EditText
+                android:id="@+id/ed_code_country"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:inputType="number"
+                android:fontFamily="@font/merienda_one"
+                android:hint="91"/>
+
+            <EditText
+                android:id="@+id/ed_phone"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="13"
+                android:maxLines="1"
+                android:fontFamily="@font/merienda_one"
+                android:hint="phone number"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/merienda_one"
+            android:text="Carrier SMS charges may apply"/>
+
+        <EditText
+            android:id="@+id/ed_code"
+            android:layout_width="150dp"
+            android:gravity="center_horizontal"
+            android:maxLength="6"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:fontFamily="@font/merienda_one"
+            android:hint="Enter OTP here..."/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@color/app_color"
+        android:textColor="@color/white"
+        android:fontFamily="@font/merienda_one"
+        android:text="Next"/>
+
+</RelativeLayout>
+
+</layout>
