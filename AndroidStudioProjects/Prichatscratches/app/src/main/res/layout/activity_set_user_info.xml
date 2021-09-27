@@ -55,6 +55,7 @@
             android:background="@drawable/edit_text_border"
             android:fontFamily="@font/merienda_one"
             android:hint="Type ur name here"
+            android:singleLine="true"
             android:paddingLeft="10dp" />
 
         <EditText

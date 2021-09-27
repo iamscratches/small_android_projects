@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -20,6 +21,7 @@ import com.iamscratches.prichatscratches.databinding.ActivityMainBinding;
 import com.iamscratches.prichatscratches.menu.CallsFragment;
 import com.iamscratches.prichatscratches.menu.ChatFragment;
 import com.iamscratches.prichatscratches.menu.StatusFragment;
+import com.iamscratches.prichatscratches.view.settings.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,8 +69,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_search:
                 Toast.makeText(MainActivity.this, "Action Search", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.menu_more:
-                Toast.makeText(MainActivity.this, "Action more", Toast.LENGTH_SHORT).show();
+            case R.id.action_new_group:
+                Toast.makeText(MainActivity.this, "Action group", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_about:
+                Toast.makeText(MainActivity.this, "Action about", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_marked:
+                Toast.makeText(MainActivity.this, "Action marked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_new_broadcast:
+                Toast.makeText(MainActivity.this, "Action broadcast", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
         }
 

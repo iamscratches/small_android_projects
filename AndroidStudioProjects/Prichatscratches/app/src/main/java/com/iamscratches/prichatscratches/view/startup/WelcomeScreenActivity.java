@@ -21,10 +21,6 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        if(firebaseUser!=null){
-            startActivity(new Intent(WelcomeScreenActivity.this, SetUserInfoActivity.class));
-            finish();
-        }
         Button btnAgree = findViewById(R.id.btn_agree);
         btnAgree.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -26,12 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.iamscratches.prichatscratches.R;
 import com.iamscratches.prichatscratches.databinding.ActivityPhoneLoginBinding;
-import com.iamscratches.prichatscratches.model.user.Users;
-import com.iamscratches.prichatscratches.view.MainActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -46,9 +40,6 @@ public class PhoneLoginActivity extends AppCompatActivity implements AdapterView
 
     private ProgressDialog progressDialog;
 
-    private FirebaseUser firebaseUser;
-    private FirebaseFirestore firebaseFirestore;
-
     String[] country = {"India", "USA", "UK", "China", "Japan", "Other"};
     String[] c_code = {"91", "1", "44", "86", "81"};
 
@@ -57,12 +48,6 @@ public class PhoneLoginActivity extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_phone_login);
         mAuth = FirebaseAuth.getInstance();
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        firebaseUser = mAuth.getCurrentUser();
-        if(firebaseUser!=null){
-            startActivity(new Intent(this, SetUserInfoActivity.class));
-            finish();
-        }
 
         Spinner spinner = findViewById(R.id.spinner_country);
         spinner.setOnItemSelectedListener(this);

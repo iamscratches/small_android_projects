@@ -43,31 +43,31 @@ public class CallsFragment extends Fragment {
 
     private void getCallList() {
         list = new ArrayList<>();
-        list.add(new CallList(
-                "11",
-                "LyMin",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU",
-                "missed"));
-        list.add(new CallList(
-                "11",
-                "LyMin",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU",
-                "outgoing"));
-        list.add(new CallList(
-                "11",
-                "LyMin",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU",
-                "incoming"));
-       list.add(new CallList(
-               "15",
-               "LyinM",
-               "15/04/2020",
-               "https://media.istockphoto.com/photos/matryoshka-doll-picture-id172803096?b=1&k=20&m=172803096&s=170667a&w=0&h=UjhcTzah8Vc_8Waz9-3hqnF3FkK3mMzAe3asbdJK0Cc=",
-               "missed"));
+//        list.add(new CallList(
+//                "11",
+//                "LyMin",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU",
+//                "missed"));
+//        list.add(new CallList(
+//                "11",
+//                "LyMin",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU",
+//                "outgoing"));
+//        list.add(new CallList(
+//                "11",
+//                "LyMin",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU",
+//                "incoming"));
+//       list.add(new CallList(
+//               "15",
+//               "LyinM",
+//               "15/04/2020",
+//               "https://media.istockphoto.com/photos/matryoshka-doll-picture-id172803096?b=1&k=20&m=172803096&s=170667a&w=0&h=UjhcTzah8Vc_8Waz9-3hqnF3FkK3mMzAe3asbdJK0Cc=",
+//               "missed"));
 
-        recyclerView.setAdapter(new CallListAdapter(list, getContext()));
+//        recyclerView.setAdapter(new CallListAdapter(list, getContext()));
     }
 }

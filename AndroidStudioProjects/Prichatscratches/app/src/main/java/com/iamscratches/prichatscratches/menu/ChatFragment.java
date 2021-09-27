@@ -72,43 +72,43 @@ public class ChatFragment extends Fragment {
 
     private void getChatList(){
         list = new ArrayList<>();
-        list.add(new ChatList(
-                "11",
-                "LyMin",
-                "hello frie",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
-        list.add(new ChatList(
-                "12",
-                "MinLY",
-                "hello frie",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
-        list.add(new ChatList(
-                "13",
-                "MLiny",
-                "hello frie",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
-        list.add(new ChatList(
-                "14",
-                "MinyL",
-                "hello frie",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
-        list.add(new ChatList(
-                "15",
-                "LyinM",
-                "hello frie",
-                "15/04/2020",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
-        list.add(new ChatList(
-                "15",
-                "LyinM",
-                "hello frie",
-                "15/04/2020",
-                "https://media.istockphoto.com/photos/matryoshka-doll-picture-id172803096?b=1&k=20&m=172803096&s=170667a&w=0&h=UjhcTzah8Vc_8Waz9-3hqnF3FkK3mMzAe3asbdJK0Cc="));
+//        list.add(new ChatList(
+//                "11",
+//                "LyMin",
+//                "hello frie",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
+//        list.add(new ChatList(
+//                "12",
+//                "MinLY",
+//                "hello frie",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
+//        list.add(new ChatList(
+//                "13",
+//                "MLiny",
+//                "hello frie",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
+//        list.add(new ChatList(
+//                "14",
+//                "MinyL",
+//                "hello frie",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
+//        list.add(new ChatList(
+//                "15",
+//                "LyinM",
+//                "hello frie",
+//                "15/04/2020",
+//                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvvG5HfspXoo-ZLVd_dVgq6hdko9LnA-rQ&usqp=CAU"));
+//        list.add(new ChatList(
+//                "15",
+//                "LyinM",
+//                "hello frie",
+//                "15/04/2020",
+//                "https://media.istockphoto.com/photos/matryoshka-doll-picture-id172803096?b=1&k=20&m=172803096&s=170667a&w=0&h=UjhcTzah8Vc_8Waz9-3hqnF3FkK3mMzAe3asbdJK0Cc="));
 
-        recyclerView.setAdapter(new ChatListAdapter(list, getContext()));
+//        recyclerView.setAdapter(new ChatListAdapter(list, getContext()));
     }
 }

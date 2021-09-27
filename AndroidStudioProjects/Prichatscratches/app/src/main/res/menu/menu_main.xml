@@ -4,11 +4,40 @@
     <item
         android:id="@+id/menu_search"
         android:icon="@drawable/ic_baseline_search_24"
+        android:fontFamily="@font/merienda_one"
         android:title="Search"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/menu_more"
-        android:icon="@drawable/ic_baseline_more_vert_24"
-        android:title="More"
-        app:showAsAction="always"/>
+    <group
+        android:id="@+id/action_more">
+        <item
+            android:id="@+id/action_new_group"
+            android:title="New Group"
+            android:fontFamily="@font/merienda_one"
+            app:showAsAction="collapseActionView"/>
+
+        <item
+            android:id="@+id/action_new_broadcast"
+            android:fontFamily="@font/merienda_one"
+            android:title="Broadcast"
+            app:showAsAction="collapseActionView"/>
+
+        <item
+            android:id="@+id/action_marked"
+            android:fontFamily="@font/merienda_one"
+            android:title="Marked Chats"
+            app:showAsAction="collapseActionView"/>
+
+        <item
+            android:id="@+id/action_settings"
+            android:fontFamily="@font/merienda_one"
+            android:title="Settings"
+            app:showAsAction="collapseActionView"/>
+
+        <item
+            android:id="@+id/action_about"
+            android:fontFamily="@font/merienda_one"
+            android:title="About"
+            app:showAsAction="collapseActionView"/>
+
+    </group>
 </menu>
